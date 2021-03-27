@@ -1,4 +1,3 @@
-
 // The top-level state object
 export interface ApplicationState {
 }

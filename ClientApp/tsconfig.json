@@ -11,7 +11,8 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "noFallthroughCasesInSwitch": true,
+    "jsx": "react-jsx",
     "lib": [
       "es2015",
       "dom"

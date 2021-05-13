@@ -1,12 +1,14 @@
-import * as React from 'react';
-import { Route } from 'react-router';
-import Layout from './components/Layout';
-import Home from './components/Home';
+import * as React from "react";
+import { Route } from "react-router";
+import Layout from "./components/Layout/Layout";
+import Home from "./components/Home";
 
-import './custom.css'
+import "./custom.scss";
 
-export default () => (
-    <Layout>
-        <Route exact path='/' component={Home} />
-    </Layout>
+const App: React.FunctionComponent = () => (
+  <Layout>
+    <Route exact path="/" component={Home} />
+  </Layout>
 );
+
+export default App;

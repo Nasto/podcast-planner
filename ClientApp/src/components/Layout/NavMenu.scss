@@ -32,11 +32,11 @@ header {
             padding: 3px 8px;
             border: 1px $darkgray solid;
             border-radius: 4px;
-            background: none;
+            background-color: $darkskyblue;
             cursor: pointer;
 
             &:hover {
-                background-color: $lightgray;
+                background-color: $carolinablue;
             }
         }
     }

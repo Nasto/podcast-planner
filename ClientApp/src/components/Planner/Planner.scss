@@ -1,7 +1,16 @@
-
-
 .upcoming-events {
-    li {
-        margin: 5px 0 15px 0;
+  .today {
+    font-size: 20pt;
+    font-weight: bold;
+  }
+
+  li {
+    margin: 15px 0 5px 0;
+
+    .session-numbers {
+      font-weight: bold;
+      margin-bottom: 5px;
+      text-decoration: underline;
     }
+  }
 }

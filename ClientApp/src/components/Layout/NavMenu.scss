@@ -1,49 +1,64 @@
 @import '../../assets/colors.scss';
 
-header {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: auto;
-
-    .title {
-        font-size: 32px;
-        font-weight: bold;
-    }
-}
-
 .menu {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    white-space: nowrap;
-    padding: 15px;
+  display: flex;
+  background-color: $beaublue;
 
-    background-color: $beaublue;
+  .button-wrapper {
+    display: flex;
 
+    .menu-button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 8px;
+      background-color: $darkskyblue;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $carolinablue;
+      }
+    }
+  }
+
+  .menu-items {
     display: flex;
     flex-direction: column;
+    padding: 10px;
 
-    .button-wrapper {
-        display: flex;
-
-        .menu-button {
-            padding: 3px 8px;
-            border: 1px $darkgray solid;
-            border-radius: 4px;
-            background-color: $darkskyblue;
-            cursor: pointer;
-
-            &:hover {
-                background-color: $carolinablue;
-            }
-        }
+    span {
+      margin: 10px;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .menu {
+    height: calc(100vh - 30px);
+    white-space: nowrap;
+    padding: 15px;
+    flex-direction: column;
 
     .menu-items {
-        padding-top: 30px;
-        display: flex;
-        flex-direction: column;
+      padding-top: 30px;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .menu {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    border: 1px $charcoal solid;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    border-radius: 8px;
+
+    .menu-items {
+      &.closed {
+        display: none;
+      }
+      align-items: flex-end;
+    }
+  }
 }

@@ -1,13 +1,19 @@
 @import './assets/colors.scss';
 
 html {
-  font-size: 14px;
+  font-size: 14pt;
   font-family: Tahoma, Arial, Helvetica;
   color: $charcoal;
+
+  body {
+    margin: 0;
+  }
 }
 
 @media (min-width: 768px) {
-    html { font-size: 16px; }
+  html {
+    font-size: 16pt;
+  }
 }
 
 a {

@@ -46,7 +46,7 @@
 
 @media (max-width: 767px) {
   .menu {
-    position: absolute;
+    position: fixed;
     right: 20px;
     bottom: 20px;
     border: 1px $charcoal solid;

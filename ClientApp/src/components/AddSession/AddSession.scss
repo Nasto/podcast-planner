@@ -1,0 +1,13 @@
+@import '../../assets/colors.scss';
+
+.add-event {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    margin: 15px;
+    padding: 5px;
+    border: 1px $charcoal solid;
+    border-radius: 5px;
+  }
+}

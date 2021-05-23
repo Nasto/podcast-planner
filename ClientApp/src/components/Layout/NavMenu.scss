@@ -2,7 +2,7 @@
 
 .menu {
   display: flex;
-  background-color: $beaublue;
+  background-color: $silver;
 
   .button-wrapper {
     display: flex;
@@ -11,12 +11,7 @@
       padding: 5px 10px;
       border: none;
       border-radius: 8px;
-      background-color: $darkskyblue;
       cursor: pointer;
-
-      &:hover {
-        background-color: $carolinablue;
-      }
     }
   }
 
@@ -38,6 +33,19 @@
     padding: 15px;
     flex-direction: column;
 
+    .menu-button {
+      background: none;
+
+      &:hover {
+        background-color: $silver;
+        box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.20);
+      }
+
+      &:active {
+        box-shadow: inset 1px 1px 5px 0px rgba(0, 0, 0, 0.20);
+      }
+    }
+
     .menu-items {
       padding-top: 30px;
     }
@@ -53,6 +61,10 @@
     flex-direction: column-reverse;
     align-items: flex-end;
     border-radius: 8px;
+
+    .menu-button {
+      background-color: $silver;
+    }
 
     .menu-items {
       &.closed {

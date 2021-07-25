@@ -1,28 +1,46 @@
-import * as React from 'react';
-import { useState } from 'react';
-import { FaBars } from 'react-icons/fa';
+import { INavLinkGroup, INavStyles, Nav } from '@fluentui/react';
+import { push } from 'connected-react-router';
+import { Path } from 'history';
+import { connect } from 'react-redux';
 
 import './NavMenu.scss';
 
-const NavMenu: React.FunctionComponent = () => {
-    
-    const [isOpen, setIsOpen] = useState(false);
-    
-    const toggle = () => setIsOpen(!isOpen);
+const NavMenu = (props: any) => {
+  const navLinkGroup: INavLinkGroup[] = [
+    {
+      name: 'Menu',
+      links: [
+        {
+          name: 'Dashboard',
+          url: '/',
+        },
+        {
+          name: 'New Session',
+          url: '/AddSession',
+        },
+      ],
+    },
+  ];
 
-    return (
-        <>
-            <div className="menu">
-                <div className="button-wrapper">
-                    <button onClick={toggle} className="menu-button"><FaBars /></button>
-                </div>
-                <div className={`menu-items ${isOpen ? 'open' : 'closed'}`}>
-                    {isOpen ? <span>Menu</span> : <span>M</span>}
-                    {isOpen ? <span>Long menu item</span> : <span>L</span>}
-                </div>
-            </div>
-        </>
-    );
-}
+  const navStyle: Partial<INavStyles> = {
+    root: {
+      padding: '15px',
+      borderRight: '1px solid #C5C1C0',
+      height: 'calc(100vh - 30px)',
+    },
+  };
 
-export default NavMenu;
+  return (
+    <Nav
+      ariaLabel="Main navigation menu"
+      onLinkClick={(event, element) => {
+        event?.preventDefault();
+        props.push(element?.url || '/');
+      }}
+      groups={navLinkGroup}
+      styles={navStyle}
+    />
+  );
+};
+
+export default connect(null, { push })(NavMenu);

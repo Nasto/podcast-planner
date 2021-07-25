@@ -43,13 +43,16 @@ const Planner: React.FunctionComponent = () => {
       return <></>;
     }
     return (
-      <ul>
-        {session.guests.map((guest: any) => (
-          <li>
-            {guest.name} ({guest.title} at {guest.company})
-          </li>
-        ))}
-      </ul>
+      <>
+        Guests:
+        <ul>
+          {session.guests.map((guest: any, idx: number) => (
+            <li key={`guest${session.number}-${idx}}`}>
+              {guest.name} ({guest.title} at {guest.company})
+            </li>
+          ))}
+        </ul>
+      </>
     );
   };
   return (
@@ -57,7 +60,7 @@ const Planner: React.FunctionComponent = () => {
       <div className="today">Today is {new Date().toLocaleDateString()}</div>
       <ul>
         {sessions.map((session: Session) => (
-          <li>
+          <li key={`session${session.number}`}>
             <div className="session-numbers">
               {session.number.toLocaleString(undefined, {
                 minimumIntegerDigits: 3,
@@ -69,7 +72,9 @@ const Planner: React.FunctionComponent = () => {
               - Feature{' '}
               {session.episode}
             </div>
-            {`${session.date.toLocaleDateString()}: ${session.topic}`}
+            <div className="session-topic">
+              {`${session.date.toLocaleDateString()}: ${session.topic}`}
+            </div>
             {mapGuests(session)}
           </li>
         ))}

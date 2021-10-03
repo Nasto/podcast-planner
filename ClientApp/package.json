@@ -6,7 +6,7 @@
     "@fluentui/react": "^8.23.8",
     "@fluentui/react-hooks": "^8.2.4",
     "connected-react-router": "^6.9.1",
-    "history": "^4.10.1",
+    "history": "^5.0.1",
     "merge": "^2.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -20,7 +20,7 @@
     "svgo": "^2.3.1"
   },
   "devDependencies": {
-    "@types/jest": "^26.0.24",
+    "@types/jest": "^27.0.2",
     "@types/node": "^16.4.1",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
@@ -30,12 +30,12 @@
     "@typescript-eslint/parser": "^4.28.4",
     "cross-env": "^7.0.3",
     "eslint": "^7.31.0",
-    "eslint-plugin-flowtype": "^5.8.1",
+    "eslint-plugin-flowtype": "^6.1.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "nan": "^2.14.2",
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
     "typescript": "^4.3.5"
   },
   "scripts": {

@@ -14,7 +14,7 @@ RUN curl -sL https://deb.nodesource.com/setup_15.x |  bash - &&\
 	apt clean &&\
     rm -rf /var/lib/apt/lists/*
 WORKDIR /src
-COPY podcast-planner.csproj .
+COPY Ui.WebApp.csproj .
 RUN dotnet restore
 COPY . .
 RUN dotnet build -c Release -o /app/build
@@ -24,4 +24,4 @@ RUN dotnet publish -c Release -o /app/publish
 
 FROM base as final
 COPY --from=publish /app/publish .
-ENTRYPOINT [ "dotnet", "podcast-planner.dll"]
+ENTRYPOINT [ "dotnet", "Ui.WebApp.dll"]
